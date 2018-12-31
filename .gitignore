@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/TDD.Money.Domain/obj
+/TDD.Money.Domain/bin/Debug/netcoreapp2.1
+/TDD.Money/obj
+/TDD.Money/bin/Debug/netcoreapp2.1
+/TDD.Money.Tests/obj
+/TDD.Money.Tests/bin/Debug/netcoreapp2.1
