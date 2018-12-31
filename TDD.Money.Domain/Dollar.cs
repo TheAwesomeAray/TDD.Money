@@ -4,7 +4,7 @@ namespace TDD.Money.Domain
 {
     public class Dollar
     {
-        public decimal Amount { get; set; }
+        private decimal Amount { get; set; }
 
         public Dollar(decimal amount)
         {
