@@ -16,5 +16,10 @@ namespace TDD.Money.Domain
             return new Dollar(Amount * multiplier);
         }
 
+        public override bool Equals(object obj)
+        {
+            Dollar dollar = obj as Dollar;
+            return dollar.Amount == Amount;
+        }
     }
 }
