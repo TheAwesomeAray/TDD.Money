@@ -1,4 +1,3 @@
-using System;
 using TDD.Money.Domain;
 using Xunit;
 

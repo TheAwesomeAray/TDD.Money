@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TDD.Money.Domain
+﻿namespace TDD.Money.Domain
 {
     public class Dollar
     {
