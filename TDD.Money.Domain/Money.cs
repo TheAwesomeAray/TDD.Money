@@ -1,6 +1,8 @@
-﻿namespace TDD.MoneyExample.Domain
+﻿using System;
+
+namespace TDD.MoneyExample.Domain
 {
-    public class Money
+    public class Money : Expression
     {
         protected string currency;
         internal decimal amount;
@@ -40,6 +42,11 @@
         public override string ToString()
         {
             return $"{amount} {currency}";
+        }
+
+        public Expression Plus(Money addend)
+        {
+            return new Money(amount + addend.amount, currency);
         }
     }
 }
