@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace TDD.MoneyExample.Domain
+﻿namespace TDD.MoneyExample.Domain
 {
-    public abstract class Money
+    public class Money
     {
         protected string currency;
         internal decimal amount;
@@ -13,27 +11,35 @@ namespace TDD.MoneyExample.Domain
             this.currency = currency;
         }
 
-        public abstract Money Times(decimal multiplier);
+        public Money Times(decimal multiplier)
+        {
+            return new Money(amount * multiplier, currency);
+        }
 
         public override bool Equals(object obj)
         {
             Money money = obj as Money;
-            return money.amount == amount && GetType() == money.GetType();
+            return money.amount == amount && currency.Equals(money.currency);
         }
 
-        public static Dollar Dollar(decimal amount)
+        public static Money Dollar(decimal amount)
         {
-            return new Dollar(amount, "USD");
+            return new Money(amount, "USD");
         }
 
-        public static Franc Franc(decimal amount)
+        public static Money Franc(decimal amount)
         {
-            return new Franc(amount, "CHF");
+            return new Money(amount, "CHF");
         }
 
         public string Currency()
         {
             return currency;
+        }
+
+        public override string ToString()
+        {
+            return $"{amount} {currency}";
         }
     }
 }
