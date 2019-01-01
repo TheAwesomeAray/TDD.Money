@@ -13,7 +13,7 @@ namespace TDD.MoneyExample.Domain
             this.addend = addend;
         }
 
-        public Money Reduce(string to)
+        public Money Reduce(Bank bank, string to)
         {
             return new Money(augend.amount + addend.amount, to);
         }

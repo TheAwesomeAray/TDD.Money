@@ -49,9 +49,15 @@ namespace TDD.MoneyExample.Domain
             return new Sum(this, addend);
         }
 
-        public Money Reduce(string to)
+        public Money Reduce(Bank bank, string to)
         {
-            return this;
+            decimal rate = bank.GetRate(currency, to);
+            return new Money(amount / rate, to);
+        }
+
+        public Money Reduce(Expression source, string to)
+        {
+            throw new NotImplementedException();
         }
     }
 }
