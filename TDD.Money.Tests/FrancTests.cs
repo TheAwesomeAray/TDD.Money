@@ -8,9 +8,9 @@ namespace TDD.MoneyExample.Tests
         [Fact]
         public void testMultiplication()
         {
-            Franc five = new Franc(5);
-            Assert.Equal(new Franc(10), five.Times(2));
-            Assert.Equal(new Franc(15), five.Times(3));
+            Franc five = Money.Franc(5);
+            Assert.Equal(Money.Franc(10), five.Times(2));
+            Assert.Equal(Money.Franc(15), five.Times(3));
         }
     }
 }

@@ -9,8 +9,8 @@ namespace TDD.MoneyExample.Tests
         public void testMultiplication()
         {
             Money five = Money.Dollar(5);
-            Assert.Equal(new Dollar(10), five.Times(2));
-            Assert.Equal(new Dollar(15), five.Times(3));
+            Assert.Equal(Money.Dollar(10), five.Times(2));
+            Assert.Equal(Money.Dollar(15), five.Times(3));
         }
 
         [Fact]
@@ -21,6 +21,13 @@ namespace TDD.MoneyExample.Tests
             Assert.True(Money.Franc(5).Equals(Money.Franc(5)));
             Assert.False(Money.Franc(5).Equals(Money.Franc(6)));
             Assert.False(Money.Franc(5).Equals(Money.Dollar(5)));
+        }
+
+        [Fact]
+        public void testCurrency()
+        {
+            Assert.Equal("USD", Money.Dollar(1).Currency());
+            Assert.Equal("CHF", Money.Franc(1).Currency());
         }
     }
 }

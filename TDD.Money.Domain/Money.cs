@@ -4,24 +4,36 @@ namespace TDD.MoneyExample.Domain
 {
     public abstract class Money
     {
-        internal decimal Amount { get; set; }
+        protected string currency;
+        internal decimal amount;
+
+        public Money(decimal amount, string currency)
+        {
+            this.amount = amount;
+            this.currency = currency;
+        }
 
         public abstract Money Times(decimal multiplier);
 
         public override bool Equals(object obj)
         {
             Money money = obj as Money;
-            return money.Amount == Amount && GetType() == money.GetType();
+            return money.amount == amount && GetType() == money.GetType();
         }
 
         public static Dollar Dollar(decimal amount)
         {
-            return new Dollar(amount);
+            return new Dollar(amount, "USD");
         }
 
         public static Franc Franc(decimal amount)
         {
-            return new Franc(amount);
+            return new Franc(amount, "CHF");
+        }
+
+        public string Currency()
+        {
+            return currency;
         }
     }
 }

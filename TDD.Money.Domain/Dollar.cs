@@ -2,14 +2,12 @@
 {
     public class Dollar : Money
     {
-        public Dollar(decimal amount)
-        {
-            Amount = amount;
-        }
+        public Dollar(decimal amount, string currency) : base (amount, currency)
+        { }
 
         public override Money Times(decimal multiplier)
         {
-            return new Dollar(Amount * multiplier);
+            return Money.Dollar(amount * multiplier);
         }
     }
 }
