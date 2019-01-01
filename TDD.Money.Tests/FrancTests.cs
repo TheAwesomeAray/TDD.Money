@@ -1,7 +1,7 @@
-﻿using TDD.Money.Domain;
+﻿using TDD.MoneyExample.Domain;
 using Xunit;
 
-namespace TDD.Money.Tests
+namespace TDD.MoneyExample.Tests
 {
     public class FrancTests
     {

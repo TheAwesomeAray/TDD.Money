@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDD.Money", "TDD.Money\TDD.Money.csproj", "{8E2C9B6B-9DFC-4548-AE91-EFA4AAD07AF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDD.MoneyExample", "TDD.Money\TDD.MoneyExample.csproj", "{8E2C9B6B-9DFC-4548-AE91-EFA4AAD07AF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDD.Money.Domain", "TDD.Money.Domain\TDD.Money.Domain.csproj", "{0C923D9F-FEFD-455D-BC3A-AAE92831B874}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDD.MoneyExample.Domain", "TDD.Money.Domain\TDD.MoneyExample.Domain.csproj", "{0C923D9F-FEFD-455D-BC3A-AAE92831B874}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDD.Money.Tests", "TDD.Money.Tests\TDD.Money.Tests.csproj", "{61E8C29D-A52B-4920-A8D9-E25B029F45C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDD.MoneyExample.Tests", "TDD.Money.Tests\TDD.MoneyExample.Tests.csproj", "{61E8C29D-A52B-4920-A8D9-E25B029F45C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

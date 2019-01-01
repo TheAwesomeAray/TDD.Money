@@ -1,14 +1,14 @@
-using TDD.Money.Domain;
+using TDD.MoneyExample.Domain;
 using Xunit;
 
-namespace TDD.Money.Tests
+namespace TDD.MoneyExample.Tests
 {
     public class DollarTests
     {
         [Fact]
         public void testMultiplication()
         {
-            Dollar five = new Dollar(5);
+            Money five = Money.Dollar(5);
             Assert.Equal(new Dollar(10), five.Times(2));
             Assert.Equal(new Dollar(15), five.Times(3));
         }
@@ -16,11 +16,11 @@ namespace TDD.Money.Tests
         [Fact]
         public void testEquality()
         {
-            Assert.True(new Dollar(5).Equals(new Dollar(5)));
-            Assert.False(new Dollar(5).Equals(new Dollar(6)));
-            Assert.True(new Franc(5).Equals(new Franc(5)));
-            Assert.False(new Franc(5).Equals(new Franc(6)));
-            Assert.False(new Franc(5).Equals(new Dollar(5)));
+            Assert.True(Money.Dollar(5).Equals(Money.Dollar(5)));
+            Assert.False(Money.Dollar(5).Equals(Money.Dollar(6)));
+            Assert.True(Money.Franc(5).Equals(Money.Franc(5)));
+            Assert.False(Money.Franc(5).Equals(Money.Franc(6)));
+            Assert.False(Money.Franc(5).Equals(Money.Dollar(5)));
         }
     }
 }

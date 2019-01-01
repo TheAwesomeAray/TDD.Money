@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TDD.Money.Domain\TDD.Money.Domain.csproj" />
+    <ProjectReference Include="..\TDD.Money.Domain\TDD.MoneyExample.Domain.csproj" />
   </ItemGroup>
 
 </Project>

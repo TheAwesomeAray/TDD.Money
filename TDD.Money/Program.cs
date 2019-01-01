@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TDD.Money
+namespace TDD.MoneyExampleExample
 {
     class Program
     {

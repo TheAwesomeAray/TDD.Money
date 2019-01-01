@@ -1,4 +1,4 @@
-﻿namespace TDD.Money.Domain
+﻿namespace TDD.MoneyExample.Domain
 {
     public class Dollar : Money
     {
@@ -7,7 +7,7 @@
             Amount = amount;
         }
 
-        public Dollar Times(decimal multiplier)
+        public override Money Times(decimal multiplier)
         {
             return new Dollar(Amount * multiplier);
         }
