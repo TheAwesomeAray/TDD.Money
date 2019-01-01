@@ -21,8 +21,6 @@ namespace TDD.MoneyExample.Tests
         {
             Assert.True(Money.Dollar(5).Equals(Money.Dollar(5)));
             Assert.False(Money.Dollar(5).Equals(Money.Dollar(6)));
-            Assert.True(Money.Franc(5).Equals(Money.Franc(5)));
-            Assert.False(Money.Franc(5).Equals(Money.Franc(6)));
             Assert.False(Money.Franc(5).Equals(Money.Dollar(5)));
         }
 
@@ -31,12 +29,6 @@ namespace TDD.MoneyExample.Tests
         {
             Assert.Equal("USD", Money.Dollar(1).Currency());
             Assert.Equal("CHF", Money.Franc(1).Currency());
-        }
-
-        [Fact]
-        public void testDifferentClassEquality()
-        {
-            Assert.True(new Money(10, "CHF").Equals(new Money(10, "CHF")));
         }
     }
 }
