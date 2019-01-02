@@ -6,7 +6,7 @@ namespace TDD.MoneyExample.Tests
     public class DollarTests
     {
         [Fact]
-        public void testMultiplication()
+        public void TestMultiplication()
         {
             Money five = Money.Dollar(5);
             Assert.Equal(Money.Dollar(10), five.Times(2));
@@ -17,7 +17,7 @@ namespace TDD.MoneyExample.Tests
         }
 
         [Fact]
-        public void testEquality()
+        public void TestEquality()
         {
             Assert.True(Money.Dollar(5).Equals(Money.Dollar(5)));
             Assert.False(Money.Dollar(5).Equals(Money.Dollar(6)));
@@ -25,14 +25,14 @@ namespace TDD.MoneyExample.Tests
         }
 
         [Fact]
-        public void testCurrency()
+        public void TestCurrency()
         {
             Assert.Equal("USD", Money.Dollar(1).Currency());
             Assert.Equal("CHF", Money.Franc(1).Currency());
         }
 
         [Fact]
-        public void testAddition()
+        public void TestAddition()
         {
             Money five = Money.Dollar(5);
             Expression sum = five.Plus(five);
@@ -42,7 +42,7 @@ namespace TDD.MoneyExample.Tests
         }
 
         [Fact]
-        public void testPlusReturnsSum()
+        public void TestPlusReturnsSum()
         {
             Money five = Money.Dollar(5);
             Expression result = five.Plus(five);
@@ -52,7 +52,7 @@ namespace TDD.MoneyExample.Tests
         }
 
         [Fact]
-        public void testReduceSum()
+        public void TestReduceSum()
         {
             Expression sum = new Sum(Money.Dollar(3), Money.Dollar(4));
             Bank bank = new Bank();
@@ -61,7 +61,7 @@ namespace TDD.MoneyExample.Tests
         }
 
         [Fact]
-        public void testReduceMoney()
+        public void TestReduceMoney()
         {
             Bank bank = new Bank();
             Money result = bank.Reduce(Money.Dollar(1), "USD");
@@ -69,7 +69,7 @@ namespace TDD.MoneyExample.Tests
         }
 
         [Fact]
-        public void testReduceMoneyDifferentCurrency()
+        public void TestReduceMoneyDifferentCurrency()
         {
             Bank bank = new Bank();
             bank.AddRate("CHF", "USD", 2);
@@ -78,13 +78,13 @@ namespace TDD.MoneyExample.Tests
         }
 
         [Fact]
-        public void testIdentityRate()
+        public void TestIdentityRate()
         {
             Assert.Equal(1, new Bank().GetRate("USD", "USD"));
         }
 
         [Fact]
-        public void testMixedAddition()
+        public void TestMixedAddition()
         {
             Expression fiveBucks = Money.Dollar(5);
             Expression tenFrancs = Money.Franc(10);
@@ -95,7 +95,7 @@ namespace TDD.MoneyExample.Tests
         }
 
         [Fact]
-        public void testSumPlusMoney()
+        public void TestSumPlusMoney()
         {
             Expression fiveBucks = Money.Dollar(5);
             Expression tenFrancs = Money.Franc(10);
@@ -107,7 +107,7 @@ namespace TDD.MoneyExample.Tests
         }
 
         [Fact]
-        public void testSumTimesMoney()
+        public void TestSumTimesMoney()
         {
             Expression fiveBucks = Money.Dollar(5);
             Expression tenFrancs = Money.Franc(10);

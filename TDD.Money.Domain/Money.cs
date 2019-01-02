@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TDD.MoneyExample.Domain
+﻿namespace TDD.MoneyExample.Domain
 {
     public class Money : CanPlus,  Expression
     {
@@ -53,6 +51,11 @@ namespace TDD.MoneyExample.Domain
         public Expression Plus(Expression addend)
         {
             return Plus(this, addend);
+        }
+
+        public override int GetHashCode()
+        {
+            return 0;
         }
     }
 }
