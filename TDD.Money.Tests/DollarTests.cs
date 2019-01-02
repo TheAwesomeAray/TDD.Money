@@ -93,5 +93,29 @@ namespace TDD.MoneyExample.Tests
             Money result = bank.Reduce(fiveBucks.Plus(tenFrancs), "USD");
             Assert.Equal(Money.Dollar(10), result);
         }
+
+        [Fact]
+        public void testSumPlusMoney()
+        {
+            Expression fiveBucks = Money.Dollar(5);
+            Expression tenFrancs = Money.Franc(10);
+            Bank bank = new Bank();
+            bank.AddRate("CHF", "USD", 2);
+            Expression sum = fiveBucks.Plus(tenFrancs).Plus(fiveBucks);
+            Money result = bank.Reduce(fiveBucks.Plus(tenFrancs), "USD");
+            Assert.Equal(Money.Dollar(10), result);
+        }
+
+        [Fact]
+        public void testSumTimesMoney()
+        {
+            Expression fiveBucks = Money.Dollar(5);
+            Expression tenFrancs = Money.Franc(10);
+            Bank bank = new Bank();
+            bank.AddRate("CHF", "USD", 2);
+            Expression sum = fiveBucks.Plus(tenFrancs).Times(2);
+            Money result = bank.Reduce(fiveBucks.Plus(tenFrancs), "USD");
+            Assert.Equal(Money.Dollar(10), result);
+        }
     }
 }

@@ -13,13 +13,18 @@
 
         public Expression Plus(Expression addend)
         {
-            throw new System.NotImplementedException();
+            return new Sum(this, addend);
         }
 
         public Money Reduce(Bank bank, string to)
         {
             return new Money(augend.Reduce(bank, to).amount 
                                     + addend.Reduce(bank, to).amount, to);
+        }
+
+        public Expression Times(decimal multiplier)
+        {
+            return new Sum(augend.Times(multiplier), addend.Times(multiplier));
         }
     }
 }
