@@ -13,11 +13,6 @@ namespace TDD.MoneyExample.Domain
             this.currency = currency;
         }
 
-        public Money Times(decimal multiplier)
-        {
-            return new Money(amount * multiplier, currency);
-        }
-
         public override bool Equals(object obj)
         {
             Money money = obj as Money;
@@ -44,7 +39,12 @@ namespace TDD.MoneyExample.Domain
             return $"{amount} {currency}";
         }
 
-        public Expression Plus(Money addend)
+        public Expression Times(decimal multiplier)
+        {
+            return new Money(amount * multiplier, currency);
+        }
+
+        public Expression Plus(Expression addend)
         {
             return new Sum(this, addend);
         }
@@ -53,11 +53,6 @@ namespace TDD.MoneyExample.Domain
         {
             decimal rate = bank.GetRate(currency, to);
             return new Money(amount / rate, to);
-        }
-
-        public Money Reduce(Expression source, string to)
-        {
-            throw new NotImplementedException();
         }
     }
 }
