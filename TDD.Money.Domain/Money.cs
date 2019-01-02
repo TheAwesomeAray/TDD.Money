@@ -2,7 +2,7 @@
 
 namespace TDD.MoneyExample.Domain
 {
-    public class Money : Expression
+    public class Money : CanPlus,  Expression
     {
         protected string currency;
         internal decimal amount;
@@ -44,15 +44,15 @@ namespace TDD.MoneyExample.Domain
             return new Money(amount * multiplier, currency);
         }
 
-        public Expression Plus(Expression addend)
-        {
-            return new Sum(this, addend);
-        }
-
         public Money Reduce(Bank bank, string to)
         {
             decimal rate = bank.GetRate(currency, to);
             return new Money(amount / rate, to);
+        }
+
+        public Expression Plus(Expression addend)
+        {
+            return Plus(this, addend);
         }
     }
 }

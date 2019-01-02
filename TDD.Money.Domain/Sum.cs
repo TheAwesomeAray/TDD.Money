@@ -1,6 +1,6 @@
 ﻿namespace TDD.MoneyExample.Domain
 {
-    public class Sum : Expression
+    public class Sum : CanPlus, Expression
     {
         public Expression augend;
         public Expression addend;
@@ -13,7 +13,7 @@
 
         public Expression Plus(Expression addend)
         {
-            return new Sum(this, addend);
+            return Plus(this, addend);
         }
 
         public Money Reduce(Bank bank, string to)
